@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>전기쥐 배구 온라인</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section id="menu" class="panel">
+      <h1>⚡ 전기쥐 배구 온라인 ⚡</h1>
+      <p class="sub">다른 와이파이에서도 방 코드로 2인 플레이</p>
+
+      <div class="menuButtons">
+        <button id="createBtn" class="primary">방 만들기</button>
+
+        <div class="joinRow">
+          <input id="roomInput" maxlength="5" placeholder="방 코드 5자리" autocomplete="off" />
+          <button id="joinBtn">방 참가</button>
+        </div>
+      </div>
+
+      <p id="menuMsg" class="msg"></p>
+
+      <div class="help">
+        <b>PC</b>: A/D 또는 ←/→ 이동, W/↑/Space 점프<br />
+        <b>휴대폰</b>: 화면 아래 버튼 사용
+      </div>
+    </section>
+
+    <section id="lobby" class="panel hidden">
+      <h2>방 코드</h2>
+      <div id="roomCode" class="roomCode">-----</div>
+      <button id="copyBtn">코드 복사</button>
+      <p id="lobbyMsg">친구가 들어오기를 기다리는 중...</p>
+    </section>
+
+    <section id="gameArea" class="hidden">
+      <div class="topbar">
+        <span id="roomBadge">ROOM -----</span>
+        <span id="status">연결됨</span>
+      </div>
+
+      <canvas id="game" width="1280" height="720"></canvas>
+
+      <div id="touchControls" class="touchControls">
+        <div class="leftControls">
+          <button data-key="left">◀</button>
+          <button data-key="right">▶</button>
+        </div>
+        <button data-key="jump" class="jumpBtn">JUMP</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/game.js"></script>
+</body>
+</html>
