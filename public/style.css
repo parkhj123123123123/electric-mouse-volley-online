@@ -1,0 +1,192 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, #243055 0%, #11182d 45%, #070b16 100%);
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.wrap {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 24px 14px 40px;
+}
+
+.panel {
+  width: min(560px, 94vw);
+  margin: 10vh auto 0;
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(19, 27, 49, 0.94);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(28px, 6vw, 48px);
+  margin: 0 0 8px;
+}
+
+.sub {
+  color: #b9c5ea;
+  margin-bottom: 26px;
+}
+
+.menuButtons {
+  display: grid;
+  gap: 14px;
+}
+
+.joinRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+input, button {
+  font: inherit;
+  border: 0;
+  border-radius: 14px;
+}
+
+input {
+  min-width: 0;
+  padding: 14px 16px;
+  background: #0b1020;
+  color: white;
+  outline: 1px solid #2e3d6b;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+button {
+  padding: 14px 18px;
+  cursor: pointer;
+  background: #2f3f70;
+  color: white;
+  font-weight: 800;
+  touch-action: none;
+}
+
+button:hover {
+  filter: brightness(1.12);
+}
+
+.primary {
+  background: linear-gradient(135deg, #f0c808, #ff7b00);
+  color: #171200;
+}
+
+.msg {
+  min-height: 24px;
+  color: #ff9b9b;
+}
+
+.help {
+  margin-top: 18px;
+  color: #aab7da;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.roomCode {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: 10px;
+  margin: 16px 0;
+  color: #ffe34d;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#gameArea {
+  width: 100%;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-weight: 800;
+  color: #d9e1ff;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  background: #75caff;
+  box-shadow: 0 20px 70px rgba(0,0,0,0.4);
+  border: 2px solid rgba(255,255,255,0.12);
+}
+
+.touchControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  gap: 12px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.leftControls {
+  display: flex;
+  gap: 10px;
+}
+
+.touchControls button {
+  width: 84px;
+  height: 70px;
+  font-size: 24px;
+  background: rgba(31, 44, 82, 0.96);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+.touchControls .jumpBtn {
+  width: 120px;
+  background: #d68b00;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .touchControls {
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 650px) {
+  .wrap {
+    padding: 10px 8px 24px;
+  }
+
+  .panel {
+    margin-top: 5vh;
+    padding: 20px;
+  }
+
+  .topbar {
+    font-size: 13px;
+  }
+
+  .touchControls button {
+    width: 72px;
+    height: 62px;
+  }
+
+  .touchControls .jumpBtn {
+    width: 108px;
+  }
+}
